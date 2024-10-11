@@ -1,27 +1,73 @@
 {
   "expo": {
-    "name": "lmplanner",
+    "name": "LmPlanner",
     "slug": "lmplanner",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourcompany.lmplanner",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses the camera to take photos.",
+        "NSLocationWhenInUseUsageDescription": "This app uses your location to provide location-based services."
+      },
+      "buildNumber": "1.0.0"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.yourcompany.lmplanner",
+      "permissions": [
+        "CAMERA",
+        "LOCATION"
+      ],
+      "versionCode": 1
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "build": {
+        "babel": {
+          "plugins": [
+            "@babel/plugin-proposal-export-namespace-from",
+            "@babel/plugin-proposal-export-default-from"
+          ]
+        }
+      },
+      "manifest": {
+        "short_name": "LmPlanner",
+        "name": "LmPlanner - Your Planning App",
+        "description": "A tool to manage your tasks and schedule.",
+        "background_color": "#ffffff",
+        "theme_color": "#000000",
+        "display": "standalone",
+        "orientation": "portrait",
+        "icons": [
+          {
+            "src": "./assets/favicon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+          },
+          {
+            "src": "./assets/icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+          }
+        ]
+      }
     }
   }
 }
